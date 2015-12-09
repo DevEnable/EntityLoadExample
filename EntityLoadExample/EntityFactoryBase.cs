@@ -12,7 +12,7 @@ namespace EntityLoadExample
         {
             if (_defaultComparer.Equals(identity, default(TEntityIdentity)))
             {
-                throw new ArgumentException("Identity cannot be null or empty", nameof(identity));
+                throw new ArgumentException("Identity cannot be null or empty", "identity");
             }
         }
     }

@@ -23,8 +23,13 @@ namespace EntityLoadExample
         private readonly Lazy<IDictionary<TEntityIdentity, TEntityData>> _data;
         private readonly IEntityBuilder<TEntityData, TEntity> _builder;
 
-        private IDictionary<TEntityIdentity, TEntityData> Data => _data.Value;
-
+        private IDictionary<TEntityIdentity, TEntityData> Data
+        {
+            get
+            {
+                return _data.Value;
+            }
+        } 
 
         public PreparedEntityFactory(IEntityData<TEntityIdentity, TEntityData> data, IEntityBuilder<TEntityData, TEntity> builder)
         {
